@@ -1,0 +1,43 @@
+{
+    "name": "discord-colorify",
+    "version": "1.0.3",
+    "description": "Add some colors and upgrades to discord texts.",
+    "main": "tests/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettier": "prettier -w /src",
+        "build": "tsc -b ./tsconfig.json",
+        "start": "node dist/main.js",
+        "launch": "yarn install && yarn build && yarn start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TheTesterss/TEV.git"
+    },
+    "keywords": [
+        "colors",
+        "discord",
+        "string",
+        "texts"
+    ],
+    "author": "TheTesters | Morgan Jaouen",
+    "contributors": [
+        {
+            "name": "Morgan Jaouen",
+            "email": "morgan.jaouen@lekreisker.fr",
+            "url": "https://github.com/TheTesterss/"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/TheTesterss/TEV/issues"
+    },
+    "homepage": "https://github.com/TheTesterss/TEV#readme",
+    "devDependencies": {
+        "prettier": "^3.3.3",
+        "tsc": "^2.0.4",
+        "tslib": "^2.8.0",
+        "typescript": "^5.6.3"
+    },
+    "dependencies": {}
+}
