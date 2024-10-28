@@ -1,1 +1,45 @@
-$log[$ping]
+// Allow to stack datas localy
+$stack[name;Morgan]
+$log[$get[name]]
+
+// Stock datas from others functions.
+$stack[ping;$process[ping]]
+$log[ $get[ping] ]
+
+// Informations obtainable with $process
+$log[$process[nodeVersion]]
+$log[$process[npmVersion]]
+$log[$process[ping]]
+$log[$process[tevVersion]]
+
+// Informations obtainable with $OS
+$log[$OS[type]]
+$log[$OS[version]]
+$log[$OS[uptime]]
+$log[$OS[totalMemory]]
+$log[$OS[freeMemory]]
+$log[$OS[cpuModel]]
+$log[$OS[cpuSpeed]]
+$log[$OS[architecture]]
+$log[$OS[platform]]
+
+
+
+// This is a comment and it will be ignored. The result of each $log above.
+$c[
+    [ LOGGED ] - Morgan
+    [ LOGGED ] - 59.80759499094728
+    [ LOGGED ] - v20.18.0
+    [ LOGGED ] - 10.9.0
+    [ LOGGED ] - 51.58228812655008
+    [ LOGGED ] - ...
+    [ LOGGED ] - Windows
+    [ LOGGED ] - 10.0.22631
+    [ LOGGED ] - 14d 3h 2m 52s
+    [ LOGGED ] - 15.78 GB
+    [ LOGGED ] - 5.58 GB
+    [ LOGGED ] - 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+    [ LOGGED ] - 2688 Mhz
+    [ LOGGED ] - x64
+    [ LOGGED ] - win32
+]

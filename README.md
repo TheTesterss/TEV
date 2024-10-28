@@ -19,11 +19,16 @@
 ### <a id="updates"></a> 🛠 〢 Future updates
 
 ```diff
-+ First commands
-+ Availability for discord bot to login.
-+ Introducing Discord functions
-+ Introducing mongoose and maybe mysql laters.
-+ Introducing canvas.
++ Completing commands (Math expressions, Array methods, Object methods)
++ Adding statements
++ Adding loops
+!--------------------------------------------------------------!
+! Updating commands on few lines not accepted like: $log[      !
+!    text                                                      !
+! ]                                                            !
+! can only be wrote like $log[ text ]                          !
+! Same for comments                                            !
+!--------------------------------------------------------------!
 ```
 
 ### <a id="terms"></a>💼 〢 Terms Of Usage

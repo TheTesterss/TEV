@@ -2,13 +2,14 @@
 import { program } from "commander";
 import fs from "node:fs";
 import path from "node:path";
-import Core from "./classes/Core";
+import CommandExecutor from "./core/CommandExecutor";
 
+// * CLASS THAT HANDLE COMMAND RESPONSES AND START RUNNING THE CORE MODULE.
 class TEV {
-    private configPath: string | null;
+    private configPath: string;
 
     constructor() {
-        this.configPath = null;
+        this.configPath = ".tev.json";
     }
 
     public setConfigPath(configPath: string) {
@@ -29,13 +30,15 @@ class TEV {
         const config = JSON.parse(fs.readFileSync(this.configPath, "utf-8"));
         console.log("Configuration loaded: ", this.configPath);
 
-        const core = new Core(config);
+        // ! RUN THE CORE MODULE.
+        const core = new CommandExecutor(config);
         await core.load();
     }
 }
 
 const tev = new TEV();
 
+// ? CREATE THE COMMAND
 program
     .version("1.0.0")
     .description("TEV CLI Tool")
@@ -43,6 +46,6 @@ program
         tev.setConfigPath(path);
     })
     .action(() => {
-        tev.run();
+        tev.run(); // ! Functions used to run the core module.
     })
     .parse(process.argv);

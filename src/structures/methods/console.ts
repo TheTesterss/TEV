@@ -1,8 +1,5 @@
-export const $log = async (d: any): Promise<void> => {
-    let result = d;
-    if (typeof d == "function") {
-        result = await d();
-    }
+// ? Functions related to the console.
 
-    return void console.log(`[LOGGED] - ${result}`);
+export const $log = async (d: string): Promise<void> => {
+    return void console.log(`[ LOGGED ] - ${d}`);
 };
