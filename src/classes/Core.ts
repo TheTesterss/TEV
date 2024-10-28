@@ -1,13 +1,13 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as acorn from 'acorn';
-import { $log } from '../structures/methods/index';
-import { $ping } from '../structures/attributs/index';
+import * as fs from "fs";
+import * as path from "path";
+import * as acorn from "acorn";
+import { $log } from "../structures/methods/index";
+import { $ping } from "../structures/attributs/index";
 
 // Map to store attributes and methods
 const commandMap: { [key: string]: any } = {
-    '$log': $log,
-    '$ping': $ping
+    $log: $log,
+    $ping: $ping
 };
 
 class Core {
@@ -23,7 +23,7 @@ class Core {
 
     private async readMainFile(): Promise<void> {
         const mainFilePath = path.resolve(process.cwd(), this.config.main);
-        const commands = fs.readFileSync(mainFilePath, 'utf-8').trim().split('\n');
+        const commands = fs.readFileSync(mainFilePath, "utf-8").trim().split("\n");
 
         for (const command of commands) {
             const matches = command.match(/\$(\w+)\[(\$\w+)\]/);

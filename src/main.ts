@@ -24,8 +24,8 @@ class TEV {
         if (!this.configPath) {
             console.error("Configuration path is not set.");
             process.exit(1);
-        } 
-        
+        }
+
         const config = JSON.parse(fs.readFileSync(this.configPath, "utf-8"));
         console.log("Configuration loaded: ", this.configPath);
 
