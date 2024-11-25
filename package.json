@@ -1,12 +1,12 @@
 {
-    "name": "discord-colorify",
+    "name": "tev",
     "version": "1.0.3",
-    "description": "Add some colors and upgrades to discord texts.",
-    "main": "tests/index.js",
+    "description": "An interpreted programming language mainly used to create discord bot a way easily.",
+    "main": "dist/Main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prettier": "prettier -w src",
-        "build": "tsc -w ./tsconfig.json",
+        "build": "tsc -w",
         "start": "node dist/Main.js",
         "launch": "yarn install && yarn build && yarn start"
     },
@@ -28,6 +28,16 @@
             "url": "https://github.com/TheTesterss/"
         }
     ],
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "exports": {
+        ".": {
+            "require": "./dist/Main.js",
+            "import": "./dist/Main.js"
+        }
+    },
+    "types": "dist/Main.d.ts",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/TheTesterss/TEV/issues"
@@ -36,8 +46,8 @@
     "devDependencies": {
         "@types/acorn": "^4.0.6",
         "@types/node": "^22.8.1",
-        "commander": "^12.1.0",
         "prettier": "^3.3.3",
+        "tev": "^1.0.0",
         "tsc": "^2.0.4",
         "tslib": "^2.8.0",
         "typescript": "^5.6.3"

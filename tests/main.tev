@@ -1,18 +1,18 @@
-// Allow to stack datas localy
-$stack[name;Morgan]
-$log[$get[name]]
+$c * -> Allow to stack datas localy
+$stack[name;Morgan] $c -> test
+$log[$get[name]] $c -> test
 
-// Stock datas from others functions.
+$c ? -> Stock datas from others functions.
 $stack[ping;$process[ping]]
 $log[ $get[ping] ]
 
-// Informations obtainable with $process
+$c ? -> Informations obtainable with $process
 $log[$process[nodeVersion]]
 $log[$process[npmVersion]]
 $log[$process[ping]]
 $log[$process[tevVersion]]
 
-// Informations obtainable with $OS
+$c ? -> Informations obtainable with $OS
 $log[$OS[type]]
 $log[$OS[version]]
 $log[$OS[uptime]]
@@ -21,25 +21,29 @@ $log[$OS[freeMemory]]
 $log[$OS[cpuModel]]
 $log[$OS[cpuSpeed]]
 $log[$OS[architecture]]
-$log[$OS[platform]]
+$log[$ping]
+$log[$OS[platform]] $c -> test
 
+$if[1==1] $c -> test
+    $log[Yes]
+$elseif[1==2] $c -> test
+    $log[Yes elseif]
+$else
+    $log[No]
+$endif
 
-
-// This is a comment and it will be ignored. The result of each $log above.
-$c[
-    [ LOGGED ] - Morgan
-    [ LOGGED ] - 59.80759499094728
-    [ LOGGED ] - v20.18.0
-    [ LOGGED ] - 10.9.0
-    [ LOGGED ] - 51.58228812655008
-    [ LOGGED ] - ...
-    [ LOGGED ] - Windows
-    [ LOGGED ] - 10.0.22631
-    [ LOGGED ] - 14d 3h 2m 52s
-    [ LOGGED ] - 15.78 GB
-    [ LOGGED ] - 5.58 GB
-    [ LOGGED ] - 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
-    [ LOGGED ] - 2688 Mhz
-    [ LOGGED ] - x64
-    [ LOGGED ] - win32
-]
+$c -> [ LOGGED ] - Morgan
+$c -> [ LOGGED ] - 59.80759499094728
+$c -> [ LOGGED ] - v20.18.0
+$c -> [ LOGGED ] - 10.9.0
+$c -> [ LOGGED ] - 51.58228812655008
+$c -> [ LOGGED ] - ...
+$c -> [ LOGGED ] - Windows
+$c -> [ LOGGED ] - 10.0.22631
+$c -> [ LOGGED ] - 14d 3h 2m 52s
+$c -> [ LOGGED ] - 15.78 GB
+$c -> [ LOGGED ] - 5.58 GB
+$c -> [ LOGGED ] - 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+$c -> [ LOGGED ] - 2688 Mhz
+$c -> [ LOGGED ] - x64
+$c -> [ LOGGED ] - win32

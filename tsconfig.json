@@ -1,10 +1,10 @@
 {
-    "compileOnSave": false,
     "compilerOptions": {
         "allowJs": true,
         "allowUnusedLabels": false,
         "alwaysStrict": true,
         "checkJs": false,
+        "declaration": true,
         "declarationMap": false,
         "esModuleInterop": true,
         "lib": ["EsNext", "DOM", "DOM.Iterable"],
@@ -12,7 +12,7 @@
         "module": "CommonJS",
         "moduleResolution": "node",
         "target": "ESNext",
-        "rootDir": "./src/",
+        "rootDir": "src",
         "outDir": "./dist/",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
@@ -26,9 +26,10 @@
         "node_modules",
         "tests",
         "dist",
+        "v1",
         "tests"
     ],
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
     ]
 }

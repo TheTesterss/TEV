@@ -1,3 +1,5 @@
 {
+    "events": "./tests/events/",
+    "libs": [],
     "main": "./tests/main.tev"
 }

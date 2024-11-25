@@ -5,6 +5,13 @@
     Can misses things, please check up the README.md
 <h5>
 
+## [V0.5.0] - VARIABLES
+```diff
+- Removed everything.
++ Upgraded the command module.
++ Added included futures librairies.
+```
+
 ## [V0.2.0] - VARIABLES
 ```diff
 - Removed $ping (now $process[ping]).

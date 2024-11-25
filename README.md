@@ -22,13 +22,13 @@
 + Completing commands (Math expressions, Array methods, Object methods)
 + Adding statements
 + Adding loops
-!--------------------------------------------------------------!
-! Updating commands on few lines not accepted like: $log[      !
-!    text                                                      !
-! ]                                                            !
-! can only be wrote like $log[ text ]                          !
-! Same for comments                                            !
-!--------------------------------------------------------------!
++ Adding log
++ Adding variables
++ Adding included librairies modules (could be imported)
++ Adding functions (could be imported/exported)
++ Adding a interpretor
++ V2 - Adding a librairy manager for public librairies
++ V3 - Adding a compiler.
 ```
 
 ### <a id="terms"></a>💼 〢 Terms Of Usage
