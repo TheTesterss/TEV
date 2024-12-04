@@ -14,8 +14,8 @@ export interface Lib {
     name: string;
     description?: string;
     version?: string;
-    addedAt?: number,
-    author?: string
+    addedAt?: number;
+    author?: string;
 }
 
 export interface ConfigType {
@@ -45,14 +45,14 @@ export interface ConfigContentLinkTypes {
 }
 
 export interface FunctionType {
-    type: "attribute" | 'method"';
+    type: "attribute" | 'method';
     lib?: string | null;
     args?: FunctionArgType[];
     run: (...args: any[]) => any;
-};
+}
 
 export interface FunctionArgType {
     name: string;
     type?: "callback" | "number" | "content" | "boolean" | "undefined";
     required?: boolean;
-};
+}

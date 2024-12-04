@@ -34,6 +34,6 @@ const loadArguments = (command: Command, args: string[]) => {
             }
             break;
     }
-}
+};
 
 export default loadArguments;

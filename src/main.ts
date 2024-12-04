@@ -12,43 +12,57 @@ export default class TEV {
     public config: ConfigType = {
         path: path.resolve(process.cwd(), ".tev.json"),
         content: {
-            events: "",
             libs: [],
-            main: ""
+            main: "main.tev"
         }
     };
-    public text: string = "[TEV - Config]"
+    public text: string = "[TEV - Config]";
     private listLibs: Lib[] = [
-        { name: "os", description: "Allows the usage of os functions and methods.", version: "0.0.1", author: "TheTesterss" },
+        {
+            name: "os",
+            description: "Allows the usage of os functions and methods.",
+            version: "0.0.1",
+            author: "TheTesterss"
+        },
         { name: "events", description: "Allows the usage of custom events.", version: "0.0.1", author: "TheTesterss" },
         { name: "path", description: "Allows the usage of path methods.", version: "0.0.1", author: "TheTesterss" },
-        { name: "fs", description: "Allows the usage of commands to manage the file system.", version: "0.0.1", author: "TheTesterss" },
-        { name: "axios", description: "Allows the usage of methods to request to apis.", version: "0.0.1", author: "TheTesterss" }
+        {
+            name: "fs",
+            description: "Allows the usage of commands to manage the file system.",
+            version: "0.0.1",
+            author: "TheTesterss"
+        },
+        {
+            name: "axios",
+            description: "Allows the usage of methods to request to apis.",
+            version: "0.0.1",
+            author: "TheTesterss"
+        }
     ];
 
     constructor() {
         this.loadInitialConfig();
     }
 
-    private loadInitialConfig(): void {
+    public loadInitialConfig(): void {
         if (fs.existsSync(this.config.path)) {
             const content = fs.readFileSync(this.config.path, "utf-8");
             const json = JSON.parse(content) as ConfigContentType;
             // ? Loads the new configurations.
             this.config.content = { ...this.config.content, ...json };
-            this.saveConfig();
         }
+        this.saveConfig();
     }
 
     public loadConfig(file?: string): void {
         if (file && typeof file !== "string") {
-            console.error(`${red(this.text)} : The registered file must be a valid string.`);
+            throw new TypeError(`${red(this.text)} : The registered file must be a valid string.`);
             process.exit(1);
         }
 
         this.config.path = file ? path.resolve(process.cwd(), file) : this.config.path;
         if (!fs.existsSync(this.config.path) || !this.config.path.endsWith(".json")) {
-            console.error(`${red(this.text)} : No configuration file found for ${red(this.config.path)}`);
+            throw new Error(`${red(this.text)} : No configuration file found for ${red(this.config.path)}`);
             process.exit(1);
         }
 
@@ -56,7 +70,9 @@ export default class TEV {
 
         if (config_1.events && typeof config_1.events === "string") {
             this.config.content.events = config_1.events;
-            console.log(`${green(this.text)} : Event folder found and now available: ${green(this.config.content.events)}`);
+            console.log(
+                `${green(this.text)} : Event folder found and now available: ${green(this.config.content.events)}`
+            );
         }
 
         if (config_1.main && typeof config_1.main === "string") {
@@ -74,15 +90,18 @@ export default class TEV {
         }
 
         if (!this.listLibs.some((lib_1: Lib) => lib_1.name === lib)) {
-            console.error(`${red(this.text)} : Library ${red(lib)} not recognized by the system.`);
-            process.exit(1);
+            throw new Error(`${red(this.text)} : Library ${red(lib)} not recognized by the system.`);
         }
 
         // ? Adds library and update configuration file.
         const me: Lib = this.listLibs.find((lib_1: Lib) => lib_1.name === lib)!;
-        this.config.content.libs.push(
-            { name: me.name, description: me.description, version: me.version, addedAt: Math.floor(Date.now() / 1000), author: me.author }
-        );
+        this.config.content.libs.push({
+            name: me.name,
+            description: me.description,
+            version: me.version,
+            addedAt: Math.floor(Date.now() / 1000),
+            author: me.author
+        });
         this.saveConfig();
         console.info(`${blue(this.text)} : ${green(lib)} has been downloaded.`);
     }

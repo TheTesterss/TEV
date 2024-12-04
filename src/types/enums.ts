@@ -4,3 +4,15 @@ export enum ColorCodes {
     YELLOW = 33,
     BLUE = 34
 }
+
+export enum Types {
+    ATTRIBUTE = 'attribute',
+    METHOD = 'method'
+}
+
+export enum ArgTypes {
+    CALLBACK = "callback",
+    CONTENT = "content",
+    BOOLEAN = "boolean",
+    UNDEFINED = "undefined"
+}

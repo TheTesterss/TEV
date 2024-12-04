@@ -9,7 +9,7 @@ const package_1 = (tev: TEV, args: string[]): void => {
     const options: String[] = ["add", "del", "reset"];
 
     // ? Three cases: an option, an argument, none of both.
-    if(options.includes(args[0]) && (args[1] || args[0] === "reset")) {
+    if (options.includes(args[0]) && (args[1] || args[0] === "reset")) {
         switch (args[0]) {
             case "add":
                 downloadLib(tev, args[1]);
@@ -21,8 +21,8 @@ const package_1 = (tev: TEV, args: string[]): void => {
                 resetLibs(tev);
                 break;
         }
-    } else if(command.availableArgs.includes(args[0])) {
-        loadArguments(command, args)
+    } else if (command.availableArgs.includes(args[0])) {
+        loadArguments(command, args);
     } else {
         console.error(`${red(text)} - ${red(args[0])} is not correct.\n`);
         console.error(yellow(`${text} - Available usage(s):`));
@@ -32,21 +32,21 @@ const package_1 = (tev: TEV, args: string[]): void => {
             console.error(`${" ".repeat(15 - i.toString().length)}${yellow(i.toString())} | ${usage}`);
         }
     }
-}
+};
 
 // ? Commands used to download, delete and reset all the libs.
 const downloadLib = (tev: TEV, libName: string) => {
     tev.addLibrairy(libName);
-}
+};
 
 const deleteLib = (tev: TEV, libName: string) => {
     tev.delLibrairy(libName);
-}
+};
 
 const resetLibs = (tev: TEV) => {
     tev.config.content.libs.forEach((lib: Lib) => {
         tev.delLibrairy(lib.name);
     });
-}
+};
 
 export default package_1;

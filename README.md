@@ -19,14 +19,16 @@
 ### <a id="updates"></a> 🛠 〢 Future updates
 
 ```diff
+--- ! = DONE ; + = TO COME ; - = TO LEAVE
+
 + Completing commands (Math expressions, Array methods, Object methods)
-+ Adding statements
+! Adding statements
 + Adding loops
-+ Adding log
-+ Adding variables
+! Adding log
+! Adding variables
 + Adding included librairies modules (could be imported)
 + Adding functions (could be imported/exported)
-+ Adding a interpretor
+! Adding a interpretor
 + V2 - Adding a librairy manager for public librairies
 + V3 - Adding a compiler.
 ```

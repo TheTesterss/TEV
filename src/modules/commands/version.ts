@@ -13,14 +13,15 @@ const version = (tev: TEV, args: string[]): void => {
     if (!args || args.length == 0) {
         const me = JSON.parse(fs.readFileSync(path.join(".", "package.json"), "utf-8"));
 
-        if (!me || !me.devDependencies?.tev) return void console.error(`${red(text)} - Not able to find this information.`);
+        if (!me || !me.devDependencies?.tev)
+            return void console.error(`${red(text)} - Not able to find this information.`);
         else return void console.info(`${blue(text)} - Currently running on V${me.devDependencies.tev}.`);
     }
 
     // ? Executes the argument.
     if (args[0]) {
-        loadArguments(command, args)
+        loadArguments(command, args);
     }
-}
+};
 
 export default version;
