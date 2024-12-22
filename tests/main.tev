@@ -12,5 +12,5 @@ $if[$get[name]==Henry]
 $elseif[$get[name]==Marc]
     $log[Who, Marc? Is that really you?] $c -> Will not be executed as the name is "Morgan".
 $else
-    $log[Still can't remember who you are...] $c -> Will be executed before none of the previous conditions were true.
+    $log[Still can't remember who you are...] $c -> Will be executed because none of the previous conditions were true.
 $endif
