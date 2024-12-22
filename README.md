@@ -28,7 +28,7 @@
 ! Adding variables
 + Adding included librairies modules (could be imported)
 + Adding functions (could be imported/exported)
-! Adding a interpretor
+! Adding an interpretor
 + V2 - Adding a librairy manager for public librairies
 + V3 - Adding a compiler.
 ```
