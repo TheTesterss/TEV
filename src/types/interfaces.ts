@@ -45,7 +45,8 @@ export interface ConfigContentLinkTypes {
 }
 
 export interface FunctionType {
-    type: "attribute" | 'method';
+    name: string;
+    type: "attribute" | "method";
     lib?: string | null;
     args?: FunctionArgType[];
     run: (...args: any[]) => any;

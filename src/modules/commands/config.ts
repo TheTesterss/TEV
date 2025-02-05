@@ -1,7 +1,7 @@
 import { commands, text, args as args_1 } from "../Commands";
 import { blue, green, red, yellow } from "../Colors";
 import { Command, Arg } from "../../types/interfaces";
-import TEV from "../../Main";
+import TEV from "../../main";
 import loadArguments from "../Arguments";
 
 const config = async (tev: TEV, args: string[]): Promise<void> => {

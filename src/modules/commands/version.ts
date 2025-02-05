@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { blue, green, red, yellow } from "../Colors";
 import { Command, Arg } from "../../types/interfaces";
-import TEV from "../../Main";
+import TEV from "../../main";
 import loadArguments from "../Arguments";
 
 const version = (tev: TEV, args: string[]): void => {

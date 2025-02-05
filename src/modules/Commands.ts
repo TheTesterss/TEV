@@ -1,4 +1,4 @@
-import TEV from "../Main";
+import TEV from "../main";
 import { Command } from "../types/interfaces";
 
 export const commands = [

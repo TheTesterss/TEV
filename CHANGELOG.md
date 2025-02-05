@@ -5,6 +5,60 @@
     Can misses things, please check up the README.md
 <h5>
 
+## [V0.7.0] - IMPORTATIONS & BORNED LOOPS
+```diff
+--- Arguments who starts with ! are required, others with ? are optionals.
+
++ Added $while[!condition]
+---> Starts a white block.
++ Added $endWhile
+---> Ends a white block.
++ Added $import[!lib;?func1;?func2;...]
+---> Imports functions from a library
++ Added Maths functions
++ $sum[!num1;?num2;?num3;...]
+---> Calculates the sum of given arguments.
++ $sub[!num1;?num2;?num3;...]
+---> Calculates the substraction of given arguments.
++ $multi[!num1;?num2;?num3;...]
+---> Calculates the multiplication of given arguments.
++ $divide[!num1;?num2;?num3;...]
+---> Calculates the division of given arguments.
++ $modulo[!num1;?num2;?num3;...]
+---> Calculates the modulo of given arguments.
++ $power[!num1;?num2;?num3;...]
+---> Calculates the first number at the power of the given arguments.
++ $ceil[!num] / $floor[!num] / $round[!num]
+---> Arounds the given argument.
++ $isNaN[!num]
+---> Returns true/false whether the argument is not a number.
++ $calculate[expression]
+---> Doesn't works currently with $get only with basic expressions such as "3*(5+1)"...
+```
+
+```php
+# Example of while loop.
+$import[maths;$sum] $c -> run "tev package add maths" to import the library.
+$c -> running just $import[maths] will import every functions including useless ones so to avoid flooding memory, importing the used functions is recommended.
+
+$stack[i;0] $c -> variable used to count.
+$while[$get[i]<10]
+    $stack[i;$sum[$get[i];1]]
+    $log[$get[i]] $c -> Currently printing $log[i=$get[i]] will not work as text cannot be matched with functions.
+$endWhile
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+```
+
 ## [V0.6.0] - CONDITIONALS BLOCKS & VARIABLES
 ```diff
 --- Arguments who starts with ! are required, others with ? are optionals.

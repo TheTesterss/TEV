@@ -6,8 +6,8 @@ export enum ColorCodes {
 }
 
 export enum Types {
-    ATTRIBUTE = 'attribute',
-    METHOD = 'method'
+    ATTRIBUTE = "attribute",
+    METHOD = "method"
 }
 
 export enum ArgTypes {

@@ -1,3 +1,3 @@
 // ? Exports every methods.
 export * from "./log";
-export * from "./variables"
+export * from "./variables";

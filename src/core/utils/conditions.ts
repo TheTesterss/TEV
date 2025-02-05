@@ -1,13 +1,11 @@
-import { ArgTypes, Types } from "../../types/enums";
+import { Types, ArgTypes } from "../../types/enums";
 
 export const $checkCondition = {
-    type: Types.METHOD,
+    name: "$checkCondition",
     lib: null,
-    args: [
-        { name: "condition", type: ArgTypes.CONTENT, required: true }
-    ],
-    // ? Verifies if a javascript condition is true or false.
+    type: Types.METHOD,
+    args: [{ name: "condition", type: ArgTypes.CONTENT, required: true }],
     run: (condition: string): boolean => {
         return !!eval(condition);
     }
-}
+};

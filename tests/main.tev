@@ -1,16 +1,7 @@
-$log[a]
-$c -> prints "a"
+$import[maths;$sum]
 
-$stack[name;Morgan]
-$c -> stacks "Morgan" as "name".
-
-$log[ $get[name] ]
-$c -> prints the name stocked, so " Morgan ".
-
-$if[$get[name]==Henry]
-    $log[So your name is Henry???] $c -> Will not be executed as the name is "Morgan".
-$elseif[$get[name]==Marc]
-    $log[Who, Marc? Is that really you?] $c -> Will not be executed as the name is "Morgan".
-$else
-    $log[Still can't remember who you are...] $c -> Will be executed because none of the previous conditions were true.
-$endif
+$stack[i;0]
+$while[$get[i]<10]
+    $stack[i;$sum[$get[i];1]]
+    $log[$get[i]]
+$endWhile

@@ -1,4 +1,12 @@
 {
-    "libs": [],
+    "libs": [
+        {
+            "name": "maths",
+            "description": "Allows the usage of mathematical operations.",
+            "version": "0.0.1",
+            "addedAt": 1738790663,
+            "author": "TheTesterss"
+        }
+    ],
     "main": "tests/main.tev"
 }

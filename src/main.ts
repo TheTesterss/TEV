@@ -17,7 +17,7 @@ export default class TEV {
         }
     };
     public text: string = "[TEV - Config]";
-    private listLibs: Lib[] = [
+    public listLibs: Lib[] = [
         {
             name: "os",
             description: "Allows the usage of os functions and methods.",
@@ -35,6 +35,12 @@ export default class TEV {
         {
             name: "axios",
             description: "Allows the usage of methods to request to apis.",
+            version: "0.0.1",
+            author: "TheTesterss"
+        },
+        {
+            name: "maths",
+            description: "Allows the usage of mathematical operations.",
             version: "0.0.1",
             author: "TheTesterss"
         }
@@ -104,6 +110,7 @@ export default class TEV {
         });
         this.saveConfig();
         console.info(`${blue(this.text)} : ${green(lib)} has been downloaded.`);
+        console.log(this.config.content)
     }
 
     public delLibrairy(lib: string): void {

@@ -21,12 +21,12 @@
 ```diff
 --- ! = DONE ; + = TO COME ; - = TO LEAVE
 
-+ Completing commands (Math expressions, Array methods, Object methods)
+! Completing commands (Math expressions, Array methods, Object methods)
 ! Adding statements
-+ Adding loops
+! Adding loops
 ! Adding log
 ! Adding variables
-+ Adding included librairies modules (could be imported)
+! Adding included librairies modules (could be imported)
 + Adding functions (could be imported/exported)
 ! Adding an interpretor
 + V2 - Adding a librairy manager for public librairies

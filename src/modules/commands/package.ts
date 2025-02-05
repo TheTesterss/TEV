@@ -1,7 +1,7 @@
 import { commands, text, args as args_1 } from "../Commands";
 import { blue, green, red, yellow } from "../Colors";
 import { Command, Arg, Lib } from "../../types/interfaces";
-import TEV from "../../Main";
+import TEV from "../../main";
 import loadArguments from "../Arguments";
 
 const package_1 = (tev: TEV, args: string[]): void => {
