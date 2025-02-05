@@ -68,7 +68,10 @@ export default class CommandExecutor {
                     if(!lib) throw new Error(`[TEV - Error] - Unknown library "${args[0]}".`);
                     if(!this.tev.config.content.libs.some((lib_1: Lib) => lib_1.name === lib.name)) throw new Error(`[TEV - Error] - Library "${args[0]}" is not downloaded.`);
                     const importations = require(`../structures/${args[0]}/index`);
-                    for (const name in importations) if (args.length > 0 && args.slice(1).includes(name)) this.CommandMap[name] = importations[name];
+                    for (const name in importations) {
+                        if (args.length > 0 && args.slice(1).includes(name)) this.CommandMap[name] = importations[name];
+                        else if(args.length === 1) this.CommandMap[name] = importations[name];
+                    }
                 } else if (command.startsWith("$while")) {
                     const { args } = await this.resolver.resolveSome(command);
                     const condition = await this.resolver.resolveConditionArg(args[0]);

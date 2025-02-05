@@ -5,6 +5,11 @@
     Can misses things, please check up the README.md
 <h5>
 
+## [V0.7.1] - CORRECTED IMPORTATIONS
+```diff
+! Corrected the importations of all the library's functions
+``` 
+
 ## [V0.7.0] - IMPORTATIONS & BORNED LOOPS
 ```diff
 --- Arguments who starts with ! are required, others with ? are optionals.
